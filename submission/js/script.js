@@ -1,10 +1,10 @@
 // Problem: User interaction doesn't provide desired results.
 // Solution: Add interactivity so the user can manage daily tasks
 
-var taskInput = document.getElementById("new-task");
+var taskInput = document.getElementById("addingTask");
 var addButton = document.getElementsByTagName("button")[0];
-var incompleteTasksHolder = document.getElementById("incomplete-tasks");
-var completedTasksHolder = document.getElementById("completed-tasks");
+var incompleteTasksHolder = document.getElementById("todoList");
+// var completedTasksHolder = document.getElementById("completed-tasks");
 
 //New Task List Item
 var createNewTaskElement = function(taskString) {
@@ -100,7 +100,7 @@ var taskCompleted = function() {
   //Append the task list item to the #completed-tasks
   var listItem = this.parentNode;
   completedTasksHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskIncomplete);
+  bindTaskEvents(listItem, todoList);
 }
 
 // Mark a task as incomplete
@@ -148,6 +148,6 @@ for(var i = 0; i <  incompleteTasksHolder.children.length; i++) {
 // Cycle over the completeTaskHolder ul list items
 for(var i = 0; i <  completedTasksHolder.children.length; i++) {
     // bind events to list item's children (taskIncompleted)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete); 
+  bindTaskEvents(completedTasksHolder.children[i], todoList); 
 
 }
